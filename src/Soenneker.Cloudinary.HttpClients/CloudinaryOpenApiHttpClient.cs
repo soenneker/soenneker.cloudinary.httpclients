@@ -11,6 +11,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Cloudinary.HttpClients;
 
+/// <inheritdoc cref="ICloudinaryOpenApiHttpClient" />
 public sealed class CloudinaryOpenApiHttpClient : ICloudinaryOpenApiHttpClient
 {
     private readonly IHttpClientCache _httpClientCache;
