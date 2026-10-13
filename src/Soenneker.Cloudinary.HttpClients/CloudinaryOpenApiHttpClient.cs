@@ -30,7 +30,7 @@ public sealed class CloudinaryOpenApiHttpClient : ICloudinaryOpenApiHttpClient
     {
         return _httpClientCache.Get(_cacheKey, (config: _config, baseUrl: _config["Cloudinary:ClientBaseUrl"] ?? _prodBaseUrl), static state =>
         {
-            var apiKey = state.config.GetValueStrict<string>("Cloudinary:ApiKey");
+            var apiKey = state.config.GetStringStrict("Cloudinary:ApiKey");
             string authHeaderName = state.config["Cloudinary:AuthHeaderName"] ?? "Authorization";
             string authHeaderValueTemplate = state.config["Cloudinary:AuthHeaderValueTemplate"] ?? "Bearer {token}";
             string authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);
